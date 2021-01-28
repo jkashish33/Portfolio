@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>Index page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="portfolio.css">
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script>
+		function checkPassword(str)
+		{
+			var re = /^(?=.[0-9])(?=.[!@#$%^&])(?=.[A-Z])(?=.[a-z])[a-zA-Z0-9!@#$%^&]{6,}$/;
+			return re.test(str);
+		}
+		
+		function Validate(){
+			var user1 = document.forms["login"]["user"].value;
+
+			var password1 = document.forms["login"]["password"].value;
+			if (user1 == "") 
+			{
+				alert("Please enter a user name");
+				return false;
+			}
+			if(password1 != "") {
+				if(!checkPassword(password1)) {
+					alert("Passwords must contain at least six characters, including uppercase, lowercase letters and numbers.");
+					// vform.password.focus();
+					return false;
+				}
+			} else {
+				alert("Error: Please check that you've entered your password!");
+				//vform.pssword.focus();
+				return false;
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<nav id="index_navbar">
+			<ul>
+					<li><img src="logo.png" width=170px></li>
+					<li><img src="Name.png" width=170px></li>
+					<li><a href="index.html"><strong>Home</strong></a></li>
+					<li><a href="about.html"><strong>About</strong></a></li>
+					<li><a href="skill.html"><strong>Skills</strong></a></li>
+					<li><a href="resume.html"><strong>Resumes</strong></a></li>
+					<li><a href="portfolio.html"><strong>Portfolio</strong></a></li>
+					<li><a href="http://kashishblog806730311.wordpress.com"><strong>Blog</strong></a></li>
+					<li><a href="references.html"><strong>Refrences</strong></a></li>
+					<li><a href="hireme.html"><strong>Hire Me</strong></a></li>
+					<li><a href="contact.html"><strong>Contact Me</strong></a></li>
+					<li><a href="#login"><strong>Log In</strong></a></li>
+					<li><a href="#checkin"><strong>Sign Up</strong></a></li>
+					<li class="footer"><small>&copy; DiazApps </small>ALL RIGHTS RESERVED BY <small id="blue">Luis M Alvarez</small></li>
+			</ul>
+		</nav>
+		<div class="intro">
+			<div class="intro1">
+				<p id="first">HELLO I'M</p>
+				<p id="second"><strong>Kashish Jain</strong></p>
+				<p id="first">FULL STACK DEVELOPER|</p>
+				<button class="btn">Download My CV<i class="fa fa-download"></i></button>
+			</div>
+		</div>
+		
+		<div id="login" class="overlay">
+			<form method="post" name="login" class="popup" action="auth_user.php">
+				Log-in<a class="close" href="index.html">&times;</a>
+				<hr>
+				User:<br>
+				<input type="text" class="textbar" name="user" required>
+				<br>
+				Password:<br>
+				<input type="password" class="textbar" name="password" required>
+				<hr>
+				<button type="reset" id="btn" class="btn" onclick="location.href='index.html'">Cancel</button>
+				<button type="submit" id="btn" class="btn" onclick='Javascript:Validate();'>Get-in</button>
+			</form>
+		</div>
+	</body>
+</html>

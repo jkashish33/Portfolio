@@ -1,0 +1,4 @@
+After session:
+1. ID in contact page from check_in table.
+2. Send mail using email from session.
+3. Put popup for invalid signup entry for email.
